@@ -4,8 +4,10 @@ import { InputBox } from "../components/InputBox";
 import { Button } from "../components/Button";
 import Waves from "../components/Waves";
 import { SubHeading } from "../components/SubHeading";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 
 export function SignUp(){
+    const Navigate = useNavigate()
     return (
         <div className="h-screen flex justify-center">
         <div className="flex justify-center w-full h-full bg-[#F3F3F3] [--color:#E1E1E1] [background-image:linear-gradient(0deg,transparent_24%,var(--color)_25%,var(--color)_26%,transparent_27%,transparent_74%,var(--color)_75%,var(--color)_76%,transparent_77%,transparent),linear-gradient(90deg,transparent_24%,var(--color)_25%,var(--color)_26%,transparent_27%,transparent_74%,var(--color)_75%,var(--color)_76%,transparent_77%,transparent)] [background-size:55px_55px]">
@@ -23,8 +25,11 @@ export function SignUp(){
                 <InputBox label={"Branch"} placeholder={""}></InputBox>
             </div>
             <div className="relative">
-                <Button label={"Login"}></Button>
+                <Button label={"SignUp"} onClick={async() => {
+                    Navigate('/login')
+                }}></Button>
             </div>
+            <Link className="relative underline pl-1 cursor-pointer text-white hover:text-blue-800 hover:font-bold items-center" to={'/login'}>LogIn</Link>
             </div>
         </div>
         </div>
